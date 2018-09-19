@@ -27,7 +27,8 @@ module Api::V1
 
     # PATCH/PUT /lists/1
     def update
-      if @list.update(list_params)
+      @list = List.find(params[:id])
+      if @list.update_attributes(list_params)
         render json: @list
       else
         render json: @list.errors, status: :unprocessable_entity

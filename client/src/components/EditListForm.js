@@ -14,7 +14,7 @@ class EditListForm extends Component {
     handleChange = (e) => {
         this.setState({[e.target.name]: e.target.value})
     }
-    handleSubmit(e){
+    handleSubmit = (e) => {
         e.preventDefault();
         const { id, title, excerpt } = this.state;
         this.props.editList(id, title, excerpt);
